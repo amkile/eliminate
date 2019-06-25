@@ -2,8 +2,17 @@ package com.yang;
 
 
 public class Element {
+    /**
+     * 行
+     */
     private int x;
+    /**
+     * 列
+     */
     private int y;
+    /**
+     * 类型
+     */
     private TypeEnum type;
 
     /**
@@ -11,7 +20,7 @@ public class Element {
      */
     private Element right;
     /**
-     * 下方元素
+     * 下方元素，绑定相同的元素
      */
     private Element down;
 
@@ -63,9 +72,23 @@ public class Element {
         return type;
     }
 
+    /**
+     * @return the x
+     */
+    public int getX() {
+        return x;
+    }
+
+    /**
+     * @return the y
+     */
+    public int getY() {
+        return y;
+    }
+
     @Override
     public String toString() {
-        return "["+type+","+right+","+down+"]";
+        return type.toString();
     }
 
 }
