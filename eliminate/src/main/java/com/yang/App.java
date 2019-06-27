@@ -1,8 +1,5 @@
 package com.yang;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
 
 /**
  * Hello world!
@@ -27,14 +24,14 @@ public class App
                 elements[x][y] = new Element(x, y);
             }
         }  
-        elements[0][3] = new Element(0, 3,TypeEnum.BLUE);
-        elements[1][3] = new Element(1, 3,TypeEnum.BLUE);
-        elements[2][3] = new Element(2, 3,TypeEnum.BLUE);
-        elements[1][2] = new Element(1, 2,TypeEnum.BLUE);
-        elements[1][4] = new Element(1, 4,TypeEnum.BLUE);
+        // elements[0][3] = new Element(0, 3,TypeEnum.BLUE);
+        // elements[1][3] = new Element(1, 3,TypeEnum.BLUE);
+        // elements[2][3] = new Element(2, 3,TypeEnum.BLUE);
+        // elements[1][2] = new Element(1, 2,TypeEnum.BLUE);
+        // elements[1][4] = new Element(1, 4,TypeEnum.BLUE);
 
-        // elements[0][0] = new Element(0, 0,TypeEnum.YELLOW);
-        // elements[0][1] = new Element(0, 1,TypeEnum.YELLOW);
+        // // elements[0][0] = new Element(0, 0,TypeEnum.YELLOW);
+        // // elements[0][1] = new Element(0, 1,TypeEnum.YELLOW);
 
         c.setElements(elements);
         c.reload();

@@ -16,7 +16,7 @@ public class Element {
     private TypeEnum type;
 
     /**
-     * 右方的元素，绑定相同的元素
+     * 右方的元素，绑定相同的元素,可以想想为一个胶水将两个粘在一起
      */
     private Element right;
     /**

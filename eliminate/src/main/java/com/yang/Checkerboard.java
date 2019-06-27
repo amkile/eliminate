@@ -70,7 +70,7 @@ public class Checkerboard {
 
                 if(eliminateMap.get(x+","+y)==null) {
                     // eliminateElement(elements[x][y]);
-                    eliminateElement(null,this.eliminateMap,elements[x][y]);
+                    spreadSearch(null,this.eliminateMap,elements[x][y]);
                 }
 
                 if(eliminateMap.get(x+","+y)!=null){
@@ -87,20 +87,17 @@ public class Checkerboard {
 
     /**
      * 执行搜索，通过当前节点向四方蔓延，大概算回溯法的一种
-     * @param et 消除类型，解空间
-     * @param eliminateMap 空间遍历集合,存放符合消除的已经经过遍历的元素
+     * @param et 消除类型，解空间，可消除元素集合
+     * @param eliminateMap 空间遍历集合,存放符合消除的已经经过遍历的元素，可以做非消除元素管理
      * @param e 根元素
      */
-    private void eliminateElement(        
-    EliminateType et, 
-    Map<String,Element>eliminateMap, 
-    Element e) {
+    private void spreadSearch(EliminateType et, Map<String,Element>eliminateMap,Element e) {
         // 结束条件
         if(e==null) return;
         if(eliminateMap.get(e.getX()+","+e.getY())!=null)return;
 
         
-        
+        // 元素四方连续元素个数
         int rl = rightLevel(e, 0);
         int ll = leftLevel(e, 0);
         int dl = downLevel(e, 0);
@@ -109,15 +106,15 @@ public class Checkerboard {
         if ((rl+ll+1) >= ELEMENT_SIZE) {
             Element etemp = e;
             eliminateMap.put(etemp.getX()+","+etemp.getY(),etemp);
-            eliminateElement(et,eliminateMap,etemp.getRight());
-            eliminateElement(et,eliminateMap,etemp.getLeft());
+            spreadSearch(et,eliminateMap,etemp.getRight());
+            spreadSearch(et,eliminateMap,etemp.getLeft());
         }
         
         if ((dl+ul+1) >= ELEMENT_SIZE) {
             Element etemp = e;
             eliminateMap.put(etemp.getX()+","+etemp.getY(),etemp);
-            eliminateElement(et,eliminateMap,etemp.getDown());
-            eliminateElement(et,eliminateMap,etemp.getUp());
+            spreadSearch(et,eliminateMap,etemp.getDown());
+            spreadSearch(et,eliminateMap,etemp.getUp());
         }
 
     }

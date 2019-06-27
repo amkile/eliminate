@@ -4,8 +4,8 @@ public enum TypeEnum{
     ORANGE,
     RED,
     BLACK,
-    GREEN,
-    YELLOW,
+    // GREEN,
+    // YELLOW,
     BLUE,
     PINK;
 }
