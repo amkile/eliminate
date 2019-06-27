@@ -24,6 +24,10 @@ public class Element {
      */
     private Element down;
 
+    private Element up;
+
+    private Element left;
+
     public Element(int x,int y, TypeEnum type) {
         this.x = x;
         this.y = y;
@@ -52,6 +56,22 @@ public class Element {
     }
 
     /**
+     * @param left the left to set
+     */
+    public void setLeft(Element left) {
+        if(left.getType() != this.type) return;
+        this.left = left;
+    }
+
+    /**
+     * @param up the up to set
+     */
+    public void setUp(Element up) {
+        if(up.getType() != this.type) return;
+        this.up = up;
+    }
+
+    /**
      * @return the down
      */
     public Element getDown() {
@@ -70,6 +90,20 @@ public class Element {
      */
     public TypeEnum getType() {
         return type;
+    }
+
+    /**
+     * @return the left
+     */
+    public Element getLeft() {
+        return left;
+    }
+
+    /**
+     * @return the up
+     */
+    public Element getUp() {
+        return up;
     }
 
     /**

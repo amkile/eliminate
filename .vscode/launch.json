@@ -1,5 +1,13 @@
 {
     "configurations": [
+
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - AppTest",
+            "request": "launch",
+            "mainClass": "com.yang.AppTest",
+            "projectName": "eliminate"
+        },
         {
             "type": "java",
             "name": "CodeLens (Launch) - App",

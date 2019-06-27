@@ -1,5 +1,7 @@
 package com.yang;
 
+import java.util.ArrayList;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -35,4 +37,26 @@ public class AppTest
     {
         assertTrue( true );
     }
+
+    public static void main(String[] args) {
+        int n = 3;
+        int leftnum = n, rightnum = n;
+        ArrayList<String> results = new ArrayList<String>();
+
+        parentheses("",results,leftnum,rightnum);
+
+
+        System.out.println(results);
+    }
+
+    public static void parentheses(String sublist,ArrayList<String> results,int leftnum, int rightnum) {
+        if(leftnum==0&&rightnum==0)
+            results.add(sublist);
+        if(rightnum>leftnum)
+            parentheses(sublist+")", results, leftnum, rightnum-1);
+        if(leftnum>0)
+            parentheses(sublist+"(", results, leftnum-1, rightnum); 
+
+    }
+
 }
